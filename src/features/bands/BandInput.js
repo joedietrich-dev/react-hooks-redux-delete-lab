@@ -10,18 +10,14 @@ function BandInput({ onBandSubmit }) {
   function handleSubmit(event) {
     event.preventDefault();
     onBandSubmit(name);
+    setName("");
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <label>
         Name
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={handleInputChange}
-        />
+        <input type="text" name="name" value={name} onChange={handleInputChange} />
       </label>
       <button type="submit">Add Band</button>
     </form>
